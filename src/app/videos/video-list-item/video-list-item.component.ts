@@ -17,14 +17,21 @@ export class VideoListItemComponent {
   }
     // **  add to playlist
 
+  /*
   AddToPlaylist(){
     this.appState.playList.push(this.video);
-
+*/
     //console.log(this.appState.playList);
 
-   }
-
+  
+   AddToPlaylist(index: number){
+    
+      this.appState.playLists[index].push(this.video);
 
   }
+
+}
+
+
 
 

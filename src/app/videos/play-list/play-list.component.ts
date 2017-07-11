@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AppState } from "../../shared/app-state.service";
-
+import {Video} from "../shared";
 
 
 
@@ -10,28 +10,29 @@ import { AppState } from "../../shared/app-state.service";
   styleUrls: ['./play-list.component.css']
 })
 export class PlayListComponent implements OnInit {
-  initState: number = 1;
- 
+  initState: number[] = [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
+  playList: Video[] = [];
+
   constructor(private appState: AppState) {
 
    }
 
-  convertState(){
-      this.initState = 1 - this.initState;
+  convertState(index: number){
+      this.initState[index] = 1 - this.initState[index];
 
   }
 
-  clickToPlay(index:number){
-    this.appState.activeVideo = this.appState.playList[index];
+  clickToPlay(playlistIndex:number, videoIndex:number){
+    this.appState.activeVideo = this.appState.playLists[playlistIndex][videoIndex];
    }
 
   addList(){
-
+    this.appState.playLists.push(this.playList = []);
 
   }
 
-  removeFromList(index:number){
-  	this.appState.playList.splice(index,1);
+  removeFromList(playlistIndex:number, videoIndex:number){
+  	this.appState.playLists[playlistIndex].splice(videoIndex,1);
 
   }
 
