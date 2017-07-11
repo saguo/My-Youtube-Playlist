@@ -19,21 +19,20 @@
 -->
 <div>
    
-    <select #playlists (change)="AddToPlaylist(playlists.value)" >
+    <select  #playlists (change)="AddToPlaylist(playlists.value)" >
 
       <option value="">Add to playlist</option>
 
       <option 
          *ngFor="let playlist of appState.playLists; let i = index"
          [value] = "i" >
-           playlist {{i+1}}
-
+           {{appState.playListsName[i]}}
       </option>
   </select>
+  <button (click)= "AddToPlaylist(0)"> &#x2B;</button>
 <div>
 
 
-
-
-  </div>
+</div>
+<div *ngIf="exist==true" class="alert alert-danger" > exist!</div>
 </div>

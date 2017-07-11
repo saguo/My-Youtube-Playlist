@@ -1,5 +1,5 @@
 <div>
-  <form role="search">
+  
     <div class="col-xs-12 col-md-10 pull-xs-right">
       <div class="form-group">
         <div class="input-group">
@@ -12,9 +12,10 @@
                  placeholder="Search..."
                  autofocus
                  (keyup)="search(textBox.value)"
+                 (keyup.enter)="search(textBox.value)"
                  >
         </div>
       </div>
     </div>
-  </form>
+ 
 </div>

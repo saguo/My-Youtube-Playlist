@@ -1,33 +1,44 @@
 <div>
-   
-    <input type="text" #newplaylist >
-    <button (click) = "addList()"> add list</button>
-   <p>{{appState.playLists[0]?.title}}</p>
-
 <ul class = "nav">
       
-  <li class = "nav-item" *ngFor="let items of appState.playLists; let i = index" >
+  <li class = "nav-item" *ngFor="let items of appState.playLists; let i = index">
     
    	<ul>
-      Playlist {{i+1}}:
+      <span *ngIf = "editBox[i] == 0">{{appState.playListsName[i]}}: </span>
+      <input  
+          #newplaylist 
+          *ngIf = "editBox[i] == 1"
+          type="text"
+          placeholder="new name..."
+          (keyup.enter)="addNewPlaylistName(newplaylist.value, i)"
+           (focusout) = "addNewPlaylistName(newplaylist.value, i)"
+          autofocus
+      />
+     
        <button (click) = "convertState(i)"> 
           <span *ngIf="initState[i] == 1">&#9660;</span>
           <span *ngIf="initState[i] == 0">&#9650;</span>
        </button>
+        
+      <button (click) = "showEditbox(i)"> edit
+      </button>
 
-
+      
   		<li *ngFor="let item of items; let j = index" >
-    		<button  (click)="clickToPlay(i, j)" *ngIf="initState[i] == 1"> {{j+1}}. {{item?.title}}</button>
-    		<a class="removebutton" (click) = "removeFromList(i, j)" *ngIf="initState[i] == 1">x</a>
+    		<button  (click)="clickToPlay(i, j)" *ngIf="initState[i] == 1"> {{j+1}}. {{item?.title.slice(0,35)}}<span
+          *ngIf= "item?.title.length > 35">
+        ...  
+        </span></button>
+    		<button class="removebutton" (click) = "removeFromList(i, j)" *ngIf="initState[i] == 1" style ="float: right"> &#x2718;</button>
   		</li>
 
   	</ul>
   </li>
 
-<ul>
-  	<p *ngIf= "appState.playLists[0].length== 0"> (Empty)</p>
+</ul>
+  	<!--<p *ngIf= "appState.playLists[0].length== 0"> (Empty)</p>-->
 	
-
+  <button (click) = "addList()"> add list</button>
 
 <div>
 
