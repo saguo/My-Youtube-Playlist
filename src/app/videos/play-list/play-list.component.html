@@ -1,14 +1,37 @@
 <div>
-   <button>My saved playlist</button>
+   <button (click) = "convertState()">My saved playlist 
+   	<span *ngIf="initState == 1">&#9660;</span>
+   	<span *ngIf="initState == 0">&#9650;</span>
+   	</button>
    
 
-   	<ul>
-  		<li *ngFor="let item of appState.playList; let i = index">
-    		<button  (click)="clickToPlay(i)"> {{i+1}}. {{item?.title}}</button>
-    		<button class="removebutton" (click) = "removeFromList(i)">x</button>
 
+   	<ul>
+
+  		<li *ngFor="let item of appState.playList; let i = index" >
+    		<button  *ngIf="initState == 1" (click)="clickToPlay(i)"> {{i+1}}. {{item?.title}}</button>
+    		<a class="removebutton" (click) = "removeFromList(i)" *ngIf="initState == 1">x</a>
   		</li>
-	</ul>
+  	</ul>
+
+  	<p *ngIf= "appState.playList.length== 0"> (Empty)</p>
+	
 
 
 <div>
+
+<!--
+<div>
+   
+   	<select #playlist (change)="clickToPlay(playlist.value)" >
+
+   		<option value="">My saved playlist</option>
+
+  		<option *ngFor="let item of appState.playList; let i = index"
+    		 [value] = "i" >
+    		 {{i+1}}. {{item?.title}}
+
+  		</option>
+	</select>
+<div>
+-->

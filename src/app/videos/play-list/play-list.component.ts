@@ -10,11 +10,16 @@ import { AppState } from "../../shared/app-state.service";
   styleUrls: ['./play-list.component.css']
 })
 export class PlayListComponent implements OnInit {
-  
-
+  initState: number = 1;
+ 
   constructor(private appState: AppState) {
 
    }
+
+  convertState(){
+      this.initState = 1 - this.initState;
+
+  }
 
   clickToPlay(index:number){
     this.appState.activeVideo = this.appState.playList[index];
@@ -31,6 +36,8 @@ export class PlayListComponent implements OnInit {
   }
 
   ngOnInit() {
+
+
   }
 
 }
