@@ -1,7 +1,6 @@
 import {Component} from "@angular/core";
 import {VideoService} from "../../../videos/shared/video.service";
 import {AppState} from "../../app-state.service";
-//import * as moment from 'moment';
 import {Video} from "../../../videos/shared/video.model";
 
 @Component({
@@ -23,7 +22,6 @@ export class SearchBoxComponent{
             item.snippet.thumbnails.high.url,
             item.snippet.channelTitle,
             item.snippet.channelId,
-            //moment(item.snippet.publishedAt).fromNow(),
             item.snippet.description)
         });
       });

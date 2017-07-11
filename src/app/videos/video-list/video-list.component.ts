@@ -1,7 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { VideoService } from "../shared/video.service";
 import { Video } from "../shared/video.model";
-//import * as moment from "moment";
 import { AppState } from "../../shared/app-state.service";
 
 @Component({
@@ -18,7 +17,7 @@ export class VideoListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.videoService.fetchVideos('typescript')
+    this.videoService.fetchVideos('Hello')
       .subscribe(data => {
         this.appState.videoList = data.items.map(item => {
           return new Video(
@@ -27,7 +26,6 @@ export class VideoListComponent implements OnInit {
             item.snippet.thumbnails.high.url,
             item.snippet.channelTitle,
             item.snippet.channelId,
-            //moment(item.snippet.publishedAt).fromNow(),
             item.snippet.description)
         });
         this.appState.activeVideo = this.appState.videoList[0];

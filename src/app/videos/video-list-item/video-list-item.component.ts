@@ -15,5 +15,16 @@ export class VideoListItemComponent {
   onClick(){
     this.appState.activeVideo = this.video;
   }
+    // **  add to playlist
 
-}
+  AddToPlaylist(){
+    this.appState.playList.push(this.video);
+
+    //console.log(this.appState.playList);
+
+   }
+
+
+  }
+
+

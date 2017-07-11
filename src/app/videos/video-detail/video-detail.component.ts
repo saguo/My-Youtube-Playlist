@@ -10,4 +10,5 @@ export class VideoDetailComponent {
 
   constructor(private appState: AppState) {}
 
+
 }

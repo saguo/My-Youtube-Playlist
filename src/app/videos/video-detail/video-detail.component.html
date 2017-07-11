@@ -1,8 +1,40 @@
+
+<!--
+<youtube-player
+      [videoId]='appState.activeVideo?.videoId'
+      (ready)="savePlayer($event)"
+      (change)="onStateChange($event)"
+    ></youtube-player>
+-->
+
 <div class="embed-container">
   <iframe width="560"
           height="315"
           frameborder="0"
           allowfullscreen
           [src]="appState.activeVideo?.videoId | youtubeSafeUrl">
+          
   </iframe>
 </div>
+
+<!-- <div class="col-xs-8">
+    <div class="row title">{{appState.activeVideo?.title}}</div>
+    
+    
+    <div class="row hidden-sm-down description">
+      {{appState.activeVideo?.description}}
+    </div>
+  
+
+  </div>
+-->
+
+
+   
+
+
+
+
+
+
+
