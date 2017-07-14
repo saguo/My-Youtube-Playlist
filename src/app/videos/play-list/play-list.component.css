@@ -1,0 +1,39 @@
+@import url("//fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400");
+
+.playlist{
+
+font:20px/24px "Yanone Kaffeesatz", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-weight:300;
+padding:10px 5px;
+
+
+
+}
+
+.listbutton {
+    background-color: white;
+    border: none;
+    color: black;
+  	width: 25em;
+  	height: 2em;
+  	text-align:left;
+}
+
+.listbutton:hover {
+
+	background-color: #F8F8F8;
+}
+
+.editbutton{
+	background-color: white;
+	border: none;
+}
+
+#addlist{
+
+	background-color: white;
+	border: none;
+	font-size: 50%;
+
+}
+
