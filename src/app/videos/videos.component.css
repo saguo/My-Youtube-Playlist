@@ -1,11 +1,14 @@
 .videodetail{
 	float: left;
 	width: 40%;
-	margin-top: 20px;
+	height: 1200px;
+	margin-top: 15px;
+	background-color: #EFEBE6;
 
 }
 .videolist{
 
 	float: right;
 	width: 60%;
+
 }
