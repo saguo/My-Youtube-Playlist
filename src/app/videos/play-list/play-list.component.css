@@ -2,38 +2,64 @@
 
 .playlist{
 
-font:20px/24px "Yanone Kaffeesatz", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
-font-weight:300;
-padding:10px 5px;
+   font:20px/19px "Yanone Kaffeesatz", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-weight:300;
+   padding:5px 5px;
+   color: #5E5449;
+   margin-top: 5px;
+   margin-bottom: 5px;
+}
+
+.playlist-item{
+	margin-top: 5px;
+}
 
 
+.list{
 
+	list-style: none;
 }
 
 .listbutton {
-    background-color: white;
+    background-color: transparent;
     border: none;
-    color: black;
-  	width: 25em;
+    color: #5E5449;
+  	width: 20em;
+  	overflow: hidden;
+  	overflow-text: ellipsis;
   	height: 2em;
   	text-align:left;
+
+
 }
 
 .listbutton:hover {
 
 	background-color: #F8F8F8;
+
 }
 
-.editbutton{
-	background-color: white;
+.listbutton:active{
+
+
+	background-color: #EFEBE6;
+
+}
+
+.editbutton-right{
+	background-color: transparent;
 	border: none;
+	float:right;
+	color: #5E5449;
 }
 
-#addlist{
 
-	background-color: white;
+.editbutton-left{
+	background-color: transparent;
 	border: none;
-	font-size: 50%;
-
+	font-size: 0.80em;
+	color: #5E5449;
 }
+
+
 

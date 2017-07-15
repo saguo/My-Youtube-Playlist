@@ -1,20 +1,22 @@
-<div class="row">
-  <div class="col-xs-4" (click)="onClick()" >
-    <a href="#" (click)="onClick()"><img src="{{video.thumbnailUrl}}" class="img-fluid"></a>
+<div class = "list-item">
+
+  <div  (click)="onClick()" >
+    <a href="#" class = "iimage" (click)="onClick()"><img src="{{video.thumbnailUrl}}" class="img-fluid"></a>
   </div>
-  <div class="col-xs-8">
-    <div class="row title"><a href="#" (click)="onClick()">{{video.title}}</a></div>
-    <div class="row channel">
-      <a href="http://youtube.com/channel/{{video.channelId}}" target="_blank">
+
+  <div >
+    <div class="ititle"><a href="#" (click)="onClick()" style = "color:black">{{video.title}}</a></div>
+    <div class="ichannel">
+      <a href="http://youtube.com/channel/{{video.channelId}}" target="_blank" style = "color:black">
         {{video.channelTitle}}
       </a>
     </div>
-    <div class="row hidden-sm-down description">
-      {{video.description}}
+    <div class="description">
+        {{video.description}}
     </div>
     
     <div>
-      <select  #playlists (change)="AddToPlaylist(playlists.value)" >
+      <select  #playlists class = "addlist" (change)="AddToPlaylist(playlists.value)" >
 
         <option  value="">Add to...</option>
 
@@ -24,9 +26,11 @@
            {{appState.playListsName[i]}}
         </option>
       </select>
-      <button (click)= "AddToPlaylist(0)"> &#x2B;</button>
-    <div>
+
+      <button class="addicon" (click)= "AddToPlaylist(0)"> + </button>
+    </div>
+
   </div>
 
-  <div *ngIf="exist==true" class="alert alert-danger" > exist!</div>
+  <div *ngIf="exist==true" class="alert-message" > exist!</div>
 </div>

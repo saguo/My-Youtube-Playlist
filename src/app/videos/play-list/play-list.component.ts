@@ -34,7 +34,7 @@ export class PlayListComponent implements OnInit {
   addList(){
     this.appState.playLists.push(this.playList = []);
     this.appState.playListsName.push("Playlist "+ (this.playlistCount+1)); 
-    this.editBox[this.playlistCount] = 1;
+    //this.editBox[this.playlistCount] = 1;
     this.playlistCount = this.playlistCount+1;
 
   }
@@ -60,6 +60,12 @@ export class PlayListComponent implements OnInit {
 
      this.editBox[playlistIndex] = 0;
 
+  }
+
+  removePlaylist(playlistIndex:number){
+    if (playlistIndex > 0){
+        this.appState.playLists.splice(playlistIndex,1);
+    }
   }
 
   ngOnInit() {

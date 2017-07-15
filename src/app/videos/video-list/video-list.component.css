@@ -1,11 +1,15 @@
-.pagination-centered {
-    text-align: center;
-}
 
-li {
-    border: none;
+.videolist li{
+	list-style: none;
+	float: left;
+	width: 170px;
+	height: 280px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+
+
 }
 
 .playing {
-    background-color: #ffdada;
+    background-color: #efebe6;
 }

@@ -1,20 +1,28 @@
-select#playlists
-{
-  
-   
-   border-radius: 50px;
+
+.iimage{
+
+    height: 40px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    width: 170px;
+
+
 
 }
-
-
-.title {
+.ititle {
     color: red;
-    font-size: 0.85rem;
+    font-size: 0.83rem;
     font-weight: bold;
     color: black;
+    font:20px/20px "Yanone Kaffeesatz", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+    height: 40px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    width: 170px;
 }
 
-.channel {
+.ichannel {
     font-size: 0.75rem;
     color: black;
 }
@@ -22,14 +30,42 @@ select#playlists
 
 .description {
     font-size: 0.75rem;
+    height: 55px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    width: 170px;
     color: black;
 }
 
-.addto{
+.addlist{
 	border: none;
-	font:20px/24px "Yanone Kaffeesatz", HelveticaNeue, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    float: right;
+    font-size: 0.80rem;
+    width:70px;
+    background-color: transparent;
+    height: 30px;
+    color: #5e5449
 
+}
 
+.addicon{
+
+    border: none;
+    float: right;
+    font-size: 1.0rem;
+    font-weight: 800;
+    width:30px;
+    background-color: transparent;
+    height: 30px;
+    color: #5e5449;
+
+}
+
+.alert-message{
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    color: #a58763;
 }
 
 

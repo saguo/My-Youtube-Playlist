@@ -1,14 +1,15 @@
 <div class = "playlist">
-  <ul class = "nav">
+  <div class = "playlist-item">
+  <ul class= "list-group">
       
-    <li class = "nav-item" *ngFor="let items of appState.playLists; let i = index">
+    <li style = "list-style:none" *ngFor="let items of appState.playLists; let i = index">
     
-   	  <ul>
+   	  <ul class="list-group">
 
-        <button class = "editbutton" (click) = "showEditbox(i)"> &#x270e;
-        </button>
+        <button class = "editbutton-right" (click) = "showEditbox(i)"> &#x270e;</button>
+        <button class = "editbutton-right" (click) = "removePlaylist(i)">del</button>
 
-        <span *ngIf = "editBox[i] == 0">{{appState.playListsName[i]}}: </span>
+        <span style= "font-weight:400" *ngIf = "editBox[i] == 0">&nbsp;&nbsp;{{appState.playListsName[i]}}: </span>
         <input  
             #newplaylist 
             *ngIf = "editBox[i] == 1"
@@ -19,28 +20,27 @@
              autofocus
         />
      
-        <button class = "editbutton" (click) = "convertState(i)"> 
+        <button class = "editbutton-left" (click) = "convertState(i)"> 
            <span *ngIf="initState[i] == 1">&#9660;</span>
            <span *ngIf="initState[i] == 0">&#9650;</span>
         </button>
         
-
-      
   		  <li class = "list" *ngFor="let item of items; let j = index" >
-    		  <button  class = "listbutton" (click)="clickToPlay(i, j)" *ngIf="initState[i] == 1"> 
-            {{j+1}}. {{item?.title.slice(0,35)}}
-            <span *ngIf= "item?.title.length > 35">... </span>
+    		  <button  class = "listbutton"  (click)="clickToPlay(i, j)" *ngIf="initState[i] == 1"> 
+            {{j+1}}. {{item?.title.slice(0,45)}}
+            <span *ngIf= "item?.title.length > 45">... </span>
           </button>
-          <span (click) = "removeFromList(i, j)" *ngIf="initState[i] == 1" style ="float: right"> &#x2718;</span>
+          <button class="editbutton-right" style="padding-top:10px" (click) = "removeFromList(i, j)" *ngIf="initState[i] == 1"> &#x2718;</button>
   		  </li>
 
   	  </ul>
     </li>
   </ul>
   	<!--<p *ngIf= "appState.playLists[0].length== 0"> (Empty)</p>-->
-	
-  <button class = "editbutton" (click) = "addList()"> add list</button>
+	<br>
 
+  <button class = "editbutton-left" (click) = "addList()"> add list</button>
+</div>
 <div>
 
 <!--

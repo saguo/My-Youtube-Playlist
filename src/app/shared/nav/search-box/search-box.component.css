@@ -1,12 +1,20 @@
 .form-group {
     display: inline;
+    float: left;
+    margin-right: 50px;
+    margin-left: 30px;
+    margin-top: 10px;
+
+   
 }
 
 .input-group-addon {
     background-color: transparent;
-    border-color: #fff;
+    border-color: #8F877E;
 }
 
+
+
 .fa-search {
-    color: #fff;
+    color: #8F877E;
 }
